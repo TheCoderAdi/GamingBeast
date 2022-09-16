@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamingBeast</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styleSWG.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="#">Gaming<span>Beast</span></a></div>
+            <ul class="menu">
+                <li><a href="index.html" class="menu-btn">Home</a></li>
+                <li><a href="changeColor.html" class="menu-btn">ChangeColor</a></li>
+                <li><a href="WOL.html" class="menu-btn">WinOrLose</a></li>
+                <li><a href="SWG.html" class="menu-btn">SWG</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <h1 class="rule">Snake,Water & Gun</h1>
+        <div class="gameContent">
+                <input type="text" id="inputGame" placeholder="Enter 'S' / 'W' / 'G'">
+                <button class="btn" id="checkSWG" value="SWG">Click me</button>
+            <div class="rightGame" id="colorHero">
+                <p id="gameWinner"></p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p class="heroP" id="content">All Rights &copy; Resevered By Aditya</p>
+    </footer>
+
+    <script>
+        $('.menu-btn').click(function () {
+            $('.navbar .menu').toggleClass("active");
+            $('.menu-btn i').toggleClass("active");
+    });
+    let cpuI = Math.floor(Math.random()*3);
+    let cpu = ["S","W","G"][cpuI];
+    let gameBtn = document.getElementById('checkSWG');
+    let write = document.getElementById('gameWinner');
+    let hero = document.getElementById('colorHero');
+    gameBtn.addEventListener('click',()=>{
+        let inputGame = document.getElementById('inputGame').value;
+        const match =(cpu,inputGame)=>{
+            if(cpu == inputGame){
+                return "Nobody"
+            }
+            else if(cpu === "S" && inputGame === "W"){
+                return "CPU"
+            }
+            else if(cpu === "S" && inputGame === "G"){
+                return "USER"
+            }
+            else if(cpu === "G" && inputGame === "W"){
+                return "USER"
+            }
+            else if(cpu === "G" && inputGame === "S"){
+                return "CPU"
+            }
+            else if(cpu === "W" && inputGame === "S"){
+                return "USER"
+            }
+            else if(cpu === "W" && inputGame === "G"){
+                return "CPU"
+            }
+        }
+        let result = match(cpu,inputGame);
+        if(result === "CPU"){
+            hero.style.backgroundColor = "red"
+            setTimeout(() => {
+                write.innerHTML = "<br>KESE KHEL RHE HO YAR"
+                setTimeout(() => {
+                    location.href = "SWG.html";
+                }, 1000);
+            }, 1000);
+        }else if(result === "USER"){
+            hero.style.backgroundColor = "green"
+            setTimeout(() => {
+                write.innerHTML = "<br>MAST KHEL RHE HO"
+                setTimeout(() => {
+                    location.href = "SWG.html";
+                }, 1000);
+            }, 1000);
+        }else{
+            hero.style.backgroundColor = "rgb(233, 190, 190)"
+            setTimeout(() => {
+                write.innerHTML = "<br>DUBARA KHELO"
+                setTimeout(() => {
+                    location.href = "SWG.html";
+                }, 1000);
+            }, 1000);
+        }
+        write.innerHTML = `CPU:${cpu} <br> USER:${inputGame}<br> The Winner is ${result}`
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,248 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+    font-size: 62.5%;
+}
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+    background-color: black;
+}
+.navbar.sticky{
+    padding: 15px 0;
+    background: crimson;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    margin-left: 15px;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+.navbar .logo a span{
+    color: crimson;
+    transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span{
+    color: #fff;
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 16px;
+}
+.navbar .menu li a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: crimson;
+}
+.navbar.sticky .menu li a:hover{
+    color: #fff;
+}
+.menu-btn{
+    color: #fff;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    cursor: pointer;
+    display: none;
+}
+.gameContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 40rem;
+}
+.rule{
+    text-align: center;
+    font-size: 2rem;
+    font-family: cursive;
+    margin-top: 2rem;
+    color: crimson;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+}
+
+#inputGame {
+    padding: 0.5rem 6rem;
+    border: 2px solid black;
+    margin-top: 0%;
+    border-radius: 2rem;
+}
+.rightGame{
+    position: absolute;
+    top: 52%;
+    border: 2px solid black;
+    width: 18%;
+    height: 9%;
+    margin-bottom: 15%;
+    padding: 1rem .4rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+.btn{
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 2rem;
+    color: crimson;
+    margin: 1rem 0;
+}
+footer{
+    height: 11vh;
+    width: 100%;
+    background-color: black;
+}
+.heroP{
+    font-size: 1rem;
+    text-align: center;
+    color:crimson;
+    padding: 29px 0px 0px 0px;
+}
+#gameWinner{
+    font-size: 1rem;
+    font-family: monospace;
+    font-weight: bold;
+    padding: 1.2rem 0rem;
+    transition: all 1s ease-in-out;
+}
+@media(max-width:800px) {
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 26%;
+        transition: all 0.8s ease-in-out;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .gameContent{
+        height: 90vh;
+    }
+}
+@media (max-width:321px){
+    .rule{
+        left: 21%;
+        font-size: 1.2rem;
+    }
+    #inputGame{
+        padding: .5rem 3rem;
+    }
+    .rightGame{
+        width: 53%;
+        top: 55%;
+        height: 18%;
+    }
+
+}
+@media (min-width:374px){
+    .rule{
+        font-size: 1.2rem;
+        left: 26%;
+    }
+    .rightGame{
+        top: 55%;
+        width: 53%;
+        height: 15%;
+    }
+}
+@media (min-width:424px){
+    .rule{
+        left: 29%;
+    }
+}
+
+@media (min-width:700px){
+    .rule{
+        font-size: 2rem;
+    }
+    .rightGame{
+        top: 56%;
+        width: 29%;
+        height: 15%;
+    }
+}
+@media (min-width:1000px){
+    .rightGame{
+        top: 60%;
+    }
+    .rule{
+        left: 35%;
+    }
+}
+@media (min-width:1400px){
+    .gameContent{
+        height: 89vh;
+    }
+    .rule{
+        left: 39%;
+    }
+    .rightGame{
+        top: 55%;
+    }
+}
+@media (min-width:2500px){
+    .rule{
+        left: 39%;
+        font-size: 4.5rem;
+    }
+    .gameContent{
+        height: 100vh;
+    }
+    .heroP{
+        font-size: 1.7rem;
+        padding: 40px 0 0 0;
+    }
+    #inputGame{
+        padding: 2rem 6rem;
+        border: 4px solid black;
+    }
+    .btn{
+        padding: 1rem 4rem;
+        border: 4px solid black;
+    }
+    .rightGame{
+        border: 5px solid black;
+    }
+}
