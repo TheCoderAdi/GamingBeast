@@ -29,8 +29,10 @@
         <div class="change">
             <div class="leftAlign" id="leftColor">
                 <div class="leftBar">
+                    <form id="games_form">
                     <input type="text" id="inputColor" placeholder="Enter a Color">
-                    <button class="btn" id="changeColor" value="Change color by typing">Click Me</button>
+                    <input type="submit" class="btn" id="changeColor" value="Click Me"/>
+                    </form>
                 </div>
             </div>
             <hr>
@@ -46,6 +48,9 @@
         <p class="heroP">All Rights &copy; Resevered By Aditya</p>
     </footer>
     <script>
+        $("#games_form").submit(function(e) {
+            e.preventDefault();
+        });
     $('.menu-btn').click(function(){
         $('.navbar .menu').toggleClass("active");
         $('.menu-btn i').toggleClass("active");
@@ -58,7 +63,7 @@
             let inputOne = document.getElementById('inputColor').value;
             leftAlign.style.backgroundColor = inputOne;
         })
-        btn_two.addEventListener('click',()=>{
+        btn_two.addEventListener('click',(e)=>{
             let inputTwo = document.getElementById('wheelBar').value;
             rightAlign.style.backgroundColor = inputTwo;
         })
