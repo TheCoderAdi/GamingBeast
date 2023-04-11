@@ -73,8 +73,7 @@ body{
     flex-direction: column;
     height: 40rem;
 }
-.rule{
-    text-align: center;
+.rule{text-align: center;
     font-size: 2rem;
     font-family: cursive;
     margin-top: 2rem;
