@@ -59,6 +59,7 @@
     let hero = document.getElementById('colorHero');
     gameBtn.addEventListener('click',()=>{
         let inputGame = document.getElementById('inputGame').value;
+        if(inputGame){
         const match =(cpu,inputGame)=>{
             if(cpu == inputGame){
                 return "Nobody"
@@ -109,6 +110,7 @@
             }, 1000);
         }
         write.innerHTML = `CPU:${cpu} <br> USER:${inputGame}<br> The Winner is ${result}`
+    }
     })
     </script>
 </body>

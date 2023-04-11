@@ -58,6 +58,7 @@
         let contentColor = document.getElementById('contentColor');
         btn.addEventListener('click', () => {
             let inputUser = document.getElementById('takeNumber').value;
+            if(inputUser){
             if (ra == inputUser) {
                 box.innerHTML = "Congratulation <br> You Win";
                 contentColor.style.backgroundColor = "green";
@@ -83,6 +84,7 @@
                 contentColor.style.background = "white"
                 contentColor.style.color = "crimson"
             }
+        }
         })
     </script>
 </body>
