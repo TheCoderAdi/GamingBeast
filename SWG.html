@@ -31,8 +31,10 @@
     <section>
         <h1 class="rule">Snake,Water & Gun</h1>
         <div class="gameContent">
-                <input type="text" id="inputGame" placeholder="Enter 'S' / 'W' / 'G'">
-                <button class="btn" id="checkSWG" value="SWG">Click me</button>
+            <form id="games_form">
+                <input type="text" autofocus id="inputGame" placeholder="Enter 'S' / 'W' / 'G'">
+                <input type="submit" class="btn" id="checkSWG" value="Click Me"/>
+            </form>
             <div class="rightGame" id="colorHero">
                 <p id="gameWinner"></p>
             </div>
@@ -43,6 +45,9 @@
     </footer>
 
     <script>
+        $("#games_form").submit(function(e) {
+            e.preventDefault();
+        });
         $('.menu-btn').click(function () {
             $('.navbar .menu').toggleClass("active");
             $('.menu-btn i').toggleClass("active");
@@ -54,6 +59,7 @@
     let hero = document.getElementById('colorHero');
     gameBtn.addEventListener('click',()=>{
         let inputGame = document.getElementById('inputGame').value;
+        if(inputGame){
         const match =(cpu,inputGame)=>{
             if(cpu == inputGame){
                 return "Nobody"
@@ -104,6 +110,7 @@
             }, 1000);
         }
         write.innerHTML = `CPU:${cpu} <br> USER:${inputGame}<br> The Winner is ${result}`
+    }
     })
     </script>
 </body>
