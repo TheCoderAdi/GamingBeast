@@ -57,20 +57,10 @@
         let btn_two = document.getElementById('changeColorWithWheel');
         let leftAlign = document.getElementById('leftColor');
         let rightAlign = document.getElementById('rightColor');
-        //* 
-        let inputColor = document.getElementById('inputColor');
-
-        const btnOneFunction = (event, input) => {
-            if (event.type === 'click' || (event.type === 'keyup' && event.keyCode === 13)) {
-                input = inputColor.value;
-                console.log(input);
-                leftAlign.style.backgroundColor = input;
-            }
-        }
-
-        btn_one.addEventListener('click', btnOneFunction);
-        inputColor.addEventListener('keyup', btnOneFunction);
-
+        btn_one.addEventListener('click', () => {
+            let inputOne = document.getElementById('inputColor').value;
+            leftAlign.style.backgroundColor = inputOne;
+        })
         btn_two.addEventListener('click', () => {
             let inputTwo = document.getElementById('wheelBar').value;
             rightAlign.style.backgroundColor = inputTwo;

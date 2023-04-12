@@ -32,8 +32,10 @@
         <h1 class="rule">Guess The Number Correctly</h1>
         <hr>
         <div class="container">
-            <input type="number" class="inputNumber" id="takeNumber" placeholder="Enter a number(1-100)">
-            <button class="btn" id="checkGuess" value="Guess Number">Click me</button>
+            <form id="games_form">
+            <input type="number" autofocus class="inputNumber" id="takeNumber" placeholder="Enter a number(1-100)">
+            <input type="submit" class="btn" id="checkGuess" value="Click Me"/>
+        </form>
             <div class="box" id="contentColor">
                 <p id="content"></p>
             </div>
@@ -43,6 +45,9 @@
         <p class="heroP">All Rights &copy; Resevered By Aditya</p>
     </footer>
     <script>
+        $("#games_form").submit(function(e) {
+            e.preventDefault();
+        });
         $('.menu-btn').click(function () {
             $('.navbar .menu').toggleClass("active");
             $('.menu-btn i').toggleClass("active");
@@ -53,6 +58,7 @@
         let contentColor = document.getElementById('contentColor');
         btn.addEventListener('click', () => {
             let inputUser = document.getElementById('takeNumber').value;
+            if(inputUser){
             if (ra == inputUser) {
                 box.innerHTML = "Congratulation <br> You Win";
                 contentColor.style.backgroundColor = "green";
@@ -78,6 +84,7 @@
                 contentColor.style.background = "white"
                 contentColor.style.color = "crimson"
             }
+        }
         })
     </script>
 </body>
