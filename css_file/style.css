@@ -1,12 +1,14 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     overflow-x: hidden;
     font-size: 62.5%;
 }
-.navbar{
+
+.navbar {
     position: fixed;
     width: 100%;
     z-index: 999;
@@ -15,35 +17,42 @@ body{
     transition: all 0.3s ease;
     background-color: black;
 }
-.navbar.sticky{
+
+.navbar.sticky {
     padding: 15px 0;
     background: crimson;
 }
-.navbar .max-width{
+
+.navbar .max-width {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.navbar .logo a{
+
+.navbar .logo a {
     margin-left: 15px;
     color: #fff;
     font-size: 1.8rem;
     font-weight: 600;
     text-decoration: none;
 }
-.navbar .logo a span{
+
+.navbar .logo a span {
     color: crimson;
     transition: all 0.3s ease;
 }
-.navbar.sticky .logo a span{
+
+.navbar.sticky .logo a span {
     color: #fff;
 }
-.navbar .menu li{
+
+.navbar .menu li {
     list-style: none;
     display: inline-block;
     margin-right: 16px;
 }
-.navbar .menu li a{
+
+.navbar .menu li a {
     display: block;
     text-decoration: none;
     color: #fff;
@@ -53,13 +62,16 @@ body{
     margin-right: 10px;
     transition: color 0.3s ease;
 }
-.navbar .menu li a:hover{
+
+.navbar .menu li a:hover {
     color: crimson;
 }
-.navbar.sticky .menu li a:hover{
+
+.navbar.sticky .menu li a:hover {
     color: #fff;
 }
-.menu-btn{
+
+.menu-btn {
     color: #fff;
     font-size: 1.5rem;
     margin-right: 15px;
@@ -68,14 +80,16 @@ body{
 }
 
 @media only screen and (max-width:800px) {
-    .menu-btn{
+    .menu-btn {
         display: block;
         z-index: 999;
     }
-    .menu-btn i.active:before{
+
+    .menu-btn i.active:before {
         content: "\f00d";
     }
-    .navbar .menu{
+
+    .navbar .menu {
         position: fixed;
         height: 100vh;
         width: 100%;
@@ -86,22 +100,26 @@ body{
         padding-top: 26%;
         transition: all 0.8s ease-in-out;
     }
-    .navbar .menu.active{
+
+    .navbar .menu.active {
         left: 0;
     }
-    .navbar .menu li{
+
+    .navbar .menu li {
         display: block;
     }
-    .navbar .menu li a{
+
+    .navbar .menu li a {
         display: inline-block;
         margin: 20px 0;
         font-size: 25px;
     }
 }
-.container{
+
+.container {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(pexel.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pexel.jpg);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -111,62 +129,78 @@ body{
     animation-play-state: running;
     animation-timing-function: ease-in-out;
 }
-@keyframes background{
-    0%{
-        background: url(waller.jpg);
-    } 20%{
-        background: url(waller1.jpg);
-    } 40%{
-        background: url(waller3.jpg);
-    } 60%{
-        background: url(pexel.jpg);
-    } 80%{
-        background: url(waller1.jpg);
-    } 100%{
-        background: url(waller3.jpg);
+
+@keyframes background {
+    0% {
+        background: url(/Images/waller.jpg);
+    }
+
+    20% {
+        background: url(/Images/waller1.jpg);
+    }
+
+    40% {
+        background: url(/Images/waller3.jpg);
+    }
+
+    60% {
+        background: url(/Images/pexel.jpg);
+    }
+
+    80% {
+        background: url(/Images/waller1.jpg);
+    }
+
+    100% {
+        background: url(/Images/waller3.jpg);
     }
 }
 
 
-.content{
+.content {
     display: flex;
     justify-content: center;
-    
+
 }
-.content-desc{
+
+.content-desc {
     width: 50%;
     position: absolute;
     top: 26%;
     left: 4%;
 }
-.content-desc h1{
+
+.content-desc h1 {
     font-size: 3rem;
     color: #f50057;
     font-family: cursive;
     margin-bottom: 20px;
     animation: header 10s ease-in-out 10s infinite;
     transition: 2s linear;
-    
+
 }
 
-.content-desc p{
+.content-desc p {
     font-size: 1.2rem;
     font-family: sans-serif;
     line-height: 1.5rem;
     color: #fff;
     margin-bottom: 25px;
 }
-.game{
+
+.game {
     margin-top: 50px;
 }
-.game-desc{
+
+.game-desc {
     margin-left: 20px;
 }
-.game p{
+
+.game p {
     margin: 0;
 }
 
-.hero-image img{
+.hero-image img {
     width: 50%;
     height: auto;
     position: absolute;
@@ -174,38 +208,45 @@ body{
     right: 100px;
     z-index: 1;
 }
-footer{
+
+footer {
     position: absolute;
     height: 11vh;
     top: 146%;
     width: 100%;
     background-color: black;
 }
-.heroP{
+
+.heroP {
     font-size: 1rem;
     text-align: center;
     color: crimson;
     padding: 29px 0px 0px 0px;
 }
+
 @media (min-width:320px) {
-    .content-desc{
+    .content-desc {
         top: 36%;
     }
 }
+
 @media (min-width:1000px) {
-    .hero-image img{
+    .hero-image img {
         right: 34px;
     }
 }
+
 @media (min-width:700px) {
-    .hero-image img{
+    .hero-image img {
         right: 32px;
     }
-    .content-desc{
+
+    .content-desc {
         top: 20%;
         left: 3%;
     }
-    footer{
+
+    footer {
         top: 100%;
     }
 }
