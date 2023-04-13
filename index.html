@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamingBeast</title>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css_file/style.css">
 </head>
 
 <body>
@@ -16,9 +19,9 @@
             <div class="logo"><a href="#">Gaming<span>Beast</span></a></div>
             <ul class="menu">
                 <li><a href="index.html" class="menu-btn">Home</a></li>
-                <li><a href="changeColor.html" class="menu-btn">ChangeColor</a></li>
-                <li><a href="WOL.html" class="menu-btn">WinOrLose</a></li>
-                <li><a href="SWG.html" class="menu-btn">SWG</a></li>
+                <li><a href="/games_file/changeColor.html" class="menu-btn">ChangeColor</a></li>
+                <li><a href="/games_file/WOL.html" class="menu-btn">WinOrLose</a></li>
+                <li><a href="/games_file/SWG.html" class="menu-btn">SWG</a></li>
             </ul>
             <div class="menu-btn">
                 <i class="fas fa-bars"></i>
@@ -29,29 +32,30 @@
         <div class="content">
             <div class="content-desc">
                 <h1>THE GAME STATION</h1>
-                <p>Never be bored again. Get the latest Playstation game for yourself. 
-         The best you could ever see.</p>
- 
-           <div class="game">
-               <img src="playstation5.png" alt="game">
-               <div class="game-desc">
-                   <h1>Play Here</h1>
-               </div>
-           </div>
+                <p>Never be bored again. Get the latest Playstation game for yourself.
+                    The best you could ever see.</p>
+
+                <div class="game">
+                    <img src="/image/playstation5.png" alt="game">
+                    <div class="game-desc">
+                        <h1>Play Here</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="/image/pad33.png" alt="pad" width="100%" height="auto">
+            </div>
         </div>
- 
-        <div class="hero-image">
-            <img src="pad33.png" alt="pad" width="100%" height="auto">
-        </div>
-    </div>
-    <footer>
-        <p class="heroP" id="content">All Rights &copy; Resevered By Aditya</p>
-    </footer>
-    <script>
-        $('.menu-btn').click(function(){
-        $('.navbar .menu').toggleClass("active");
-        $('.menu-btn i').toggleClass("active");
-    });
-    </script>
+        <footer>
+            <p class="heroP" id="content">All Rights &copy; Resevered By Aditya</p>
+        </footer>
+        <script>
+            $('.menu-btn').click(function () {
+                $('.navbar .menu').toggleClass("active");
+                $('.menu-btn i').toggleClass("active");
+            });
+        </script>
 </body>
+
 </html>
