@@ -1,11 +1,13 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     font-size: 62.5%;
 }
-.navbar{
+
+.navbar {
     position: fixed;
     width: 100%;
     z-index: 999;
@@ -14,35 +16,42 @@ body{
     transition: all 0.3s ease;
     background-color: black;
 }
-.navbar.sticky{
+
+.navbar.sticky {
     padding: 15px 0;
     background: crimson;
 }
-.navbar .max-width{
+
+.navbar .max-width {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.navbar .logo a{
+
+.navbar .logo a {
     margin-left: 15px;
     color: #fff;
     font-size: 1.8rem;
     font-weight: 600;
     text-decoration: none;
 }
-.navbar .logo a span{
+
+.navbar .logo a span {
     color: crimson;
     transition: all 0.3s ease;
 }
-.navbar.sticky .logo a span{
+
+.navbar.sticky .logo a span {
     color: #fff;
 }
-.navbar .menu li{
+
+.navbar .menu li {
     list-style: none;
     display: inline-block;
     margin-right: 16px;
 }
-.navbar .menu li a{
+
+.navbar .menu li a {
     display: block;
     text-decoration: none;
     color: #fff;
@@ -52,27 +61,33 @@ body{
     margin-right: 10px;
     transition: color 0.3s ease;
 }
-.navbar .menu li a:hover{
+
+.navbar .menu li a:hover {
     color: crimson;
 }
-.navbar.sticky .menu li a:hover{
+
+.navbar.sticky .menu li a:hover {
     color: #fff;
 }
-.menu-btn{
+
+.menu-btn {
     color: #fff;
     font-size: 1.5rem;
     margin-right: 15px;
     cursor: pointer;
     display: none;
 }
+
 /* Game Section */
-section{
+section {
     background-color: whitesmoke;
 }
-#games_form{
+
+#games_form {
     margin-top: 90px;
 }
-.detailsOfTheGame{
+
+.detailsOfTheGame {
     width: 100%;
     font-weight: bolder;
     font-size: 1.3rem;
@@ -81,11 +96,13 @@ section{
     background: black;
     transition: all 1s ease-in-out;
 }
-.detailsOfTheGame p{
+
+.detailsOfTheGame p {
     transition: all 0.6s ease-in-out;
     text-align: center;
     color: white;
 }
+
 .container {
     display: flex;
     align-items: center;
@@ -93,7 +110,8 @@ section{
     flex-direction: column;
     height: 40rem;
 }
-.box{
+
+.box {
     border: 2px solid black;
     width: 18%;
     margin-bottom: 15%;
@@ -101,13 +119,15 @@ section{
     text-align: center;
     border-radius: 1rem;
 }
-.inputNumber{
+
+.inputNumber {
     padding: 0.5rem 6rem;
     border: 2px solid black;
     margin-top: 23%;
     border-radius: 2rem;
 }
-.btn{
+
+.btn {
     padding: 0.5rem 1rem;
     cursor: pointer;
     border: 2px solid black;
@@ -115,13 +135,15 @@ section{
     color: crimson;
     margin: 1rem 0;
 }
-#content{
+
+#content {
     font-size: 1rem;
     font-family: monospace;
     font-weight: bold;
-    padding : 1.1rem 0rem;
+    padding: 1.1rem 0rem;
 }
-.rule{
+
+.rule {
     text-align: center;
     font-size: 2rem;
     font-family: cursive;
@@ -131,26 +153,31 @@ section{
     top: 10%;
     left: 36%;
 }
-footer{
+
+footer {
     height: 11vh;
     width: 100%;
     background-color: black;
 }
-.heroP{
+
+.heroP {
     font-size: 1rem;
     text-align: center;
     color: crimson;
     padding: 29px 0px 0px 0px;
 }
+
 @media only screen and (max-width:800px) {
-    .menu-btn{
+    .menu-btn {
         display: block;
         z-index: 999;
     }
-    .menu-btn i.active:before{
+
+    .menu-btn i.active:before {
         content: "\f00d";
     }
-    .navbar .menu{
+
+    .navbar .menu {
         position: fixed;
         height: 100vh;
         width: 100%;
@@ -161,90 +188,109 @@ footer{
         padding-top: 26%;
         transition: all 0.8s ease-in-out;
     }
-    .navbar .menu.active{
+
+    .navbar .menu.active {
         left: 0;
     }
-    .navbar .menu li{
+
+    .navbar .menu li {
         display: block;
     }
-    .navbar .menu li a{
+
+    .navbar .menu li a {
         display: inline-block;
         margin: 20px 0;
         font-size: 25px;
     }
-    .container{
+
+    .container {
         height: 90vh;
     }
 }
+
 @media (min-width:320px) {
-    .rule{
+    .rule {
         left: 9%;
         font-size: 1.2rem;
     }
-    .inputNumber{
+
+    .inputNumber {
         padding: .5rem 3rem;
     }
-    .box{
+
+    .box {
         width: 36%;
         height: 10%;
     }
 }
+
 @media (min-width:374px) {
-    .rule{
+    .rule {
         left: 14%;
     }
 }
+
 @media (min-width:424px) {
-    .rule{
+    .rule {
         left: 18%;
     }
 }
+
 @media (min-width:750px) {
-    .rule{
+    .rule {
         left: 22%;
         /* top: 16%; */
         font-size: 2rem;
     }
 }
+
 @media (min-width:1000px) {
-    .rule{
+    .rule {
         left: 30%;
         /* top: 19%; */
         font-size: 2rem;
     }
 }
+
 @media (min-width:1400px) {
-    .rule{
+    .rule {
         left: 34%;
         /* top: 19%; */
         font-size: 2rem;
     }
-    .container{
+
+    .container {
         height: 89vh;
     }
 }
-@media (min-width:2500px){
-    .rule{
+
+@media (min-width:2500px) {
+    .rule {
         /* top: 25%; */
         left: 32%;
         font-size: 4.5rem;
     }
-    .container{
+
+    .container {
         height: 100vh;
     }
-    .heroP{
+
+    .heroP {
         font-size: 1.7rem;
         padding: 40px 0 0 0;
     }
-    .inputNumber{
+
+    .inputNumber {
         padding: 2rem 6rem;
         border: 4px solid black;
     }
-    .btn{
+
+    .btn {
         padding: 1rem 4rem;
         border: 4px solid black;
     }
-    .box{
+
+    .box {
         border: 5px solid black;
         height: 10%;
         padding: 2rem 0rem;

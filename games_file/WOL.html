@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styleWinLose.css">
+    <link rel="stylesheet" href="/css_file/styleWinLose.css">
 </head>
 
 <body>
@@ -18,10 +18,10 @@
         <div class="max-width">
             <div class="logo"><a href="#">Gaming<span>Beast</span></a></div>
             <ul class="menu">
-                <li><a href="index.html" class="menu-btn">Home</a></li>
-                <li><a href="changeColor.html" class="menu-btn">ChangeColor</a></li>
-                <li><a href="WOL.html" class="menu-btn">Guess The Number</a></li>
-                <li><a href="SWG.html" class="menu-btn">SWG</a></li>
+                <li><a href="/index.html" class="menu-btn">Home</a></li>
+                <li><a href="/games_file/changeColor.html" class="menu-btn">ChangeColor</a></li>
+                <li><a href="/games_file/WOL.html" class="menu-btn">Guess The Number</a></li>
+                <li><a href="/games_file/SWG.html" class="menu-btn">SWG</a></li>
             </ul>
             <div class="menu-btn">
                 <i class="fas fa-bars"></i>
@@ -33,9 +33,9 @@
         <hr>
         <div class="container">
             <form id="games_form">
-            <input type="number" autofocus class="inputNumber" id="takeNumber" placeholder="Enter a number(1-100)">
-            <input type="submit" class="btn" id="checkGuess" value="Click Me"/>
-        </form>
+                <input type="number" autofocus class="inputNumber" id="takeNumber" placeholder="Enter a number(1-100)">
+                <input type="submit" class="btn" id="checkGuess" value="Click Me" />
+            </form>
             <div class="box" id="contentColor">
                 <p id="content"></p>
             </div>
@@ -45,7 +45,7 @@
         <p class="heroP">All Rights &copy; Resevered By Aditya</p>
     </footer>
     <script>
-        $("#games_form").submit(function(e) {
+        $("#games_form").submit(function (e) {
             e.preventDefault();
         });
         $('.menu-btn').click(function () {
@@ -58,33 +58,33 @@
         let contentColor = document.getElementById('contentColor');
         btn.addEventListener('click', () => {
             let inputUser = document.getElementById('takeNumber').value;
-            if(inputUser){
-            if (ra == inputUser) {
-                box.innerHTML = "Congratulation <br> You Win";
-                contentColor.style.backgroundColor = "green";
-                contentColor.style.color = "white"
-                setTimeout(() => {
-                    box.innerHTML = "EK AUR BAR KHEL KE BATAO"
+            if (inputUser) {
+                if (ra == inputUser) {
+                    box.innerHTML = "Congratulation <br> You Win";
+                    contentColor.style.backgroundColor = "green";
+                    contentColor.style.color = "white"
                     setTimeout(() => {
-                        location.href = "WOL.html";
+                        box.innerHTML = "EK AUR BAR KHEL KE BATAO"
+                        setTimeout(() => {
+                            location.href = "WOL.html";
+                        }, 1000);
                     }, 1000);
-                }, 1000);
-            } else if (inputUser < 0) {
-                box.innerHTML = "You are out of range"
-                contentColor.style.backgroundColor = "red";
-            } else if (inputUser > 100) {
-                box.innerHTML = "You are out of range";
-                contentColor.style.backgroundColor = "red";
-            } else if (inputUser > ra) {
-                box.innerHTML = "Too High";
-                contentColor.style.background = "white"
-                contentColor.style.color = "crimson"
-            } else if (inputUser < ra) {
-                box.innerHTML = "Too Low";
-                contentColor.style.background = "white"
-                contentColor.style.color = "crimson"
+                } else if (inputUser < 0) {
+                    box.innerHTML = "You are out of range"
+                    contentColor.style.backgroundColor = "red";
+                } else if (inputUser > 100) {
+                    box.innerHTML = "You are out of range";
+                    contentColor.style.backgroundColor = "red";
+                } else if (inputUser > ra) {
+                    box.innerHTML = "Too High";
+                    contentColor.style.background = "white"
+                    contentColor.style.color = "crimson"
+                } else if (inputUser < ra) {
+                    box.innerHTML = "Too Low";
+                    contentColor.style.background = "white"
+                    contentColor.style.color = "crimson"
+                }
             }
-        }
         })
     </script>
 </body>
