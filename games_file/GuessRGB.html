@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuessRGB</title>
+    <style>
+body {
+	background-color:  #232323;
+	margin: 0;
+	font-family: "Montserrat", "Avenir";
+}
+
+.square {
+	width: 30%;
+	background: purple;
+	padding-bottom: 30%;
+	float: left;
+	margin: 1.66%;
+	border-radius: 15%;
+	transition: background 0.6s;
+	-webkit-transition: background 0.6s;
+	-moz-transition: background 0.6s;
+}
+
+#container {
+	margin: 20px auto;
+	max-width: 600px;
+}
+
+h1 {
+	text-align: center;
+	line-height: 1.1;
+	font-weight: normal;
+	color: white;
+	background: steelblue;
+	margin: 0; 
+	text-transform: uppercase;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#colorDisplay {
+	font-size: 200%;
+}
+
+
+#stripe {
+	background: white;
+	height: 30px;
+	text-align: center;
+	color: black;
+}
+
+.selected {
+	color: white;
+	background: steelblue;
+}
+
+button {
+	border: none;
+	background: none;
+	text-transform: uppercase;
+	height: 100%;
+	font-weight: 700;
+	color: steelblue;
+	letter-spacing: 1px;
+	font-size: inherit;
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	outline: none;
+}
+
+#message {
+	display: inline-block;
+	width: 20%;
+}
+
+button:hover {
+	color: white;
+	background: steelblue;
+}
+
+
+    </style>
+</head>
+<body>
+    <h1>Guess RGB
+        <br> 
+        <span id="colorDisplay">RGB</span>
+    </h1>
+    
+    <div id="stripe">
+        <button id="reset">New Colors</button>
+        <span id="message"></span>
+        <button id="easyButton">Easy</button>
+        <button id="hardButton"class="selected">Hard</button>
+        
+    </div>
+        <div id="container">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+    </div>
+    <script>
+var numSquares = 6;
+var colors = generateRandomColors(numSquares);
+var squares = document.querySelectorAll(".square");
+var pickedColor = randomColorG();
+var colorDisplay = document.querySelector("#colorDisplay");
+var messageDisplay = document.querySelector("#message");
+var h1 = document.querySelector("h1");
+var resetButton = document.querySelector("#reset");
+var easyBtn = document.querySelector("#easyButton");
+var hardBtn = document.querySelector("#hardButton");
+
+
+easyBtn.addEventListener("click", function(){
+	hardBtn.classList.remove("selected");
+	easyBtn.classList.add("selected");
+    
+	numSquares = 3;
+    
+	colors = generateRandomColors(numSquares);
+	pickedColor = randomColorG();
+	colorDisplay.textContent = pickedColor;
+    
+	for(var i = 0; i < squares.length; i++){
+		if(colors[i]){
+			squares[i].style.background = colors[i];
+		} else {
+			squares[i].style.display = "none";
+		}
+	}
+});
+
+hardBtn.addEventListener("click", function(){
+	easyBtn.classList.remove("selected");
+	hardBtn.classList.add("selected");
+	numSquares = 6;
+	colors = generateRandomColors(numSquares);
+	pickedColor = randomColorG();
+	colorDisplay.textContent = pickedColor;
+	for(var i = 0; i < squares.length; i++){
+		squares[i].style.backgroundColor = colors[i];
+		squares[i].style.display = "block";
+	}
+});
+
+resetButton.addEventListener("click", function(){
+	colors = generateRandomColors(numSquares);
+	pickedColor = randomColorG();
+    
+	colorDisplay.textContent = pickedColor;
+	resetButton.textContent = "New Colors";
+	messageDisplay.textContent = "";
+    
+	for(var i = 0; i < squares.length; i++){
+		squares[i].style.backgroundColor = colors[i];
+	}
+	h1.style.background = "steelblue"; 
+})
+
+colorDisplay.textContent = pickedColor;
+
+for(var i = 0; i < squares.length; i++) {
+	squares[i].style.backgroundColor = colors[i];
+    
+	squares[i].addEventListener("click", function(){
+		var clickedColor = this.style.backgroundColor;
+		console.log(clickedColor, pickedColor);
+		if(clickedColor === pickedColor){
+			messageDisplay.textContent = "Correct!";
+			resetButton.textContent = "Play Again?";
+			changeColors(clickedColor);
+			h1.style.background = clickedColor;
+		}	else {
+			this.style.backgroundColor = "#232323";
+			messageDisplay.textContent = "Try Again";
+		}
+		});
+}
+
+function changeColors(colorz){
+	for(var i = 0; i < squares.length; i++){
+		squares[i].style.background = colorz;
+	}	
+}
+
+function randomColorG(){
+	var random = Math.floor(Math.random() * colors.length)
+	return colors[random];
+}
+
+function generateRandomColors(genColor){
+	var arr = []
+	for(var i = 0; i < genColor; i++){
+		arr.push(randomColor())
+	}
+	return arr;
+}
+
+function randomColor(){
+	var r = Math.floor(Math.random() * 256);
+	var g = Math.floor(Math.random() * 256);
+	var b = Math.floor(Math.random() * 256);
+	return "rgb(" + r +", " + g +", " + b +")";
+}
+    </script>
+</body>
+</html>
