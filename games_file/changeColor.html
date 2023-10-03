@@ -46,30 +46,59 @@
                 </div>
             </div>
         </div>
+        <button class="btn" id="compareColors">Compare</button>
+        <div id="celebration" style="display: none;">
+            <p>Congratulations! You won!</p>
+            <button class="btn" id="reset">Reset</button>
+        </div>
     </section>
     <footer>
-        <p class="heroP">All Rights &copy; Resevered By Aditya</p>
+        <p class="heroP">All Rights &copy; Reserved By Aditya</p>
     </footer>
     <script>
         $("#games_form").submit(function (e) {
             e.preventDefault();
         });
+
         $('.menu-btn').click(function () {
             $('.navbar .menu').toggleClass("active");
             $('.menu-btn i').toggleClass("active");
         });
+
         let btn_one = document.getElementById('changeColor');
         let btn_two = document.getElementById('changeColorWithWheel');
         let leftAlign = document.getElementById('leftColor');
         let rightAlign = document.getElementById('rightColor');
+        let compareButton = document.getElementById('compareColors');
+        let resetButton = document.getElementById('reset');
+        let celebrationDiv = document.getElementById('celebration');
+
         btn_one.addEventListener('click', () => {
             let inputOne = document.getElementById('inputColor').value;
             leftAlign.style.backgroundColor = inputOne;
-        })
-        btn_two.addEventListener('click', (e) => {
+        });
+
+        btn_two.addEventListener('click', () => {
             let inputTwo = document.getElementById('wheelBar').value;
             rightAlign.style.backgroundColor = inputTwo;
-        })
+        });
+
+        compareButton.addEventListener('click', () => {
+            let leftColor = getComputedStyle(leftAlign).backgroundColor;
+            let rightColor = getComputedStyle(rightAlign).backgroundColor;
+
+            if (leftColor === rightColor) {
+                // Colors match, display celebration
+                celebrationDiv.style.display = 'block';
+            }
+        });
+
+        resetButton.addEventListener('click', () => {
+            // Reset the colors and hide the celebration
+            leftAlign.style.backgroundColor = '';
+            rightAlign.style.backgroundColor = '';
+            celebrationDiv.style.display = 'none';
+        });
     </script>
 </body>
 

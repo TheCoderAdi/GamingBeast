@@ -126,7 +126,7 @@ footer{
         width: 100%;
         left: -100%;
         top: 0;
-        background: #111;
+        background: black;
         text-align: center;
         padding-top: 26%;
         transition: all 0.8s ease-in-out;
@@ -176,3 +176,21 @@ footer{
         left: 37%;
     }
 }
+#celebration {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#celebration p {
+    font-size: 1.5rem;
+    color: crimson;
+    margin-bottom: 10px;
+}
+
+#reset {
+    background-color: crimson;
+    color: white;
+}
+
+
+
